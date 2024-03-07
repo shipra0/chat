@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="col-md-12 text-center">
+    <h2 class="heading">Type Your Username<br>To Enter The Chatroom</h2>
+    <ng-container *ngFor="let message of messages">
+      <div class="message" [ngClass]="{'from':message.author==='bot','to':message.author==='user'}">
+        {{message.content}}
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-md-12 text-center">
+    <input type="text" [(ngModel)]="username" class="form-control" placeholder="Enter your username"><br>
+    <button class="btn btn-primary" (click)="sendMessage()">Start Chatting</button><br>
+  </div>
+</div>
